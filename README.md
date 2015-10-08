@@ -10,6 +10,13 @@ $(element).amLich({
 ```
 ## Version
  * 0.1 (mới nhất) - 08/10/2015 (dd/mm/yyyy)
+ 
+## Đặc điểm
+ * Âm và dương lịch
+ * 24 tiết khí
+ * Giờ đầu ngày
+ * Giờ hòang đạo
+ * CÁC NGÀY LỄ ÂM VÀ DƯƠNG LỊCH CỦA VIỆT NAM
 
 ## Ảnh chụp
  ![Calendar](http://i.imgur.com/46YGejT.jpg)
