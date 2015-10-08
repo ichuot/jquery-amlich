@@ -2,7 +2,7 @@
 ======
 **Âm lịch** là một jQuery plugin được viết lại dựa trên mã nguồn của Hồ Ngọc Đức ([http://www.informatik.uni-leipzig.de/~duc/amlich/](http://www.informatik.uni-leipzig.de/~duc/amlich/)). Cách sử dụng:
 
-```
+```javascript
 $(element).amLich({
   type: 'calendar', // month or year
   tableWidth: '200px'
