@@ -12,7 +12,7 @@ $(element).amLich({
  * 0.1 (mới nhất) - 08/10/2015 (dd/mm/yyyy)
 
 ## Ảnh chụp
- *![Calendar](http://i.imgur.com/46YGejT.jpg)
+ ![Calendar](http://i.imgur.com/46YGejT.jpg)
 
 ## Liên hệ
  * Tuan Ngo Minh
