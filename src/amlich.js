@@ -62,40 +62,40 @@
     GIO_HD = ['110100101100', '001101001011', '110011010010', '101100110100', '001011001101', '010010110011'],
     TIETKHI = ['Xuân phân', 'Thanh minh', 'Cốc vũ', 'Lập hạ', 'Tiểu mãn', 'Mang chủng',
       'Hạ chí', 'Tiểu thử', 'Đại thử', 'Lập thu', 'Xử thử', 'Bạch lộ',
-      'Thu phân', 'H� n lộ', 'Sương giáng', 'Lập đông', 'Tiểu tuyết', 'Đại tuyết',
-      'Đông chí', 'Tiểu h� n', 'Đại h� n', 'Lập xuân', 'Vũ thủy', 'Kinh trập'
+      'Thu phân', 'Hàn lộ', 'Sương giáng', 'Lập đông', 'Tiểu tuyết', 'Đại tuyết',
+      'Đông chí', 'Tiểu hàn', 'Đại hàn', 'Lập xuân', 'Vũ thủy', 'Kinh trập'
     ],
     THANG = ['Một', 'Hai', 'Ba', 'Bốn', 'Năm', 'Sáu', 'Bảy', 'Tám', 'Chín', 'Mười', 'Mười một', 'Mười hai'],
     DAYNAMES = ['CN', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7'],
     LE = {
       solar: [
         { d:  1, m:  1, i: 'Tết Dương lịch' },
-        { d:  9, m:  1, i: 'Ng� y Học sinh - Sinh viên Việt Nam' },
-        { d:  3, m:  2, i: 'Ng� y th� nh lập Đảng Cộng sản Việt Nam' },
-        { d: 27, m:  2, i: 'Ng� y Thầy thuốc Việt Nam' },
-        { d:  8, m:  3, i: 'Ng� y Quốc tế Phụ nữ' },
-        { d:  8, m:  3, i: 'Ng� y th� nh lập Đo� n Thanh niên Cộng sản Hồ Chí Minh' },
-        { d: 26, m:  3, i: 'Ng� y th� nh lập Đo� n Thanh niên Cộng sản Hồ Chí Minh' },
-        { d: 21, m:  4, i: 'Ng� y Sách Việt Nam' },
-        { d: 30, m:  4, i: 'Ng� y Thống nhất đất nước' },
-        { d:  1, m:  5, i: 'Ng� y Quốc tế Lao động' },
-        { d: 15, m:  5, i: 'Ng� y th� nh lập Đội Thiếu niên Tiền phong Hồ Chí Minh' },
-        { d: 19, m:  5, i: 'Ng� y sinh của Chủ tịch Hồ Chí Minh' },
-        { d:  1, m:  6, i: 'Ng� y Quốc tế Thiếu nhi' },
-        { d:  5, m:  6, i: 'Ng� y Bác Hồ ra đi tìm đường cứu nước' },
-        { d: 27, m:  7, i: 'Ng� y Thương binh Liệt sĩ' },
-        { d: 19, m:  8, i: 'Ng� y Cách mạng tháng Tám th� nh công' },
-        { d:  2, m:  9, i: 'Ng� y Quốc khánh' },
-        { d: 13, m: 10, i: 'Ng� y Doanh nhân Việt Nam' },
-        { d: 20, m: 10, i: 'Ng� y th� nh lập Hội Phụ nữ Việt Nam' },
-        { d: 20, m: 11, i: 'Ng� y Nh�  giáo Việt Nam' },
-        { d: 22, m: 12, i: 'Ng� y th� nh lập Quân đội Nhân dân Việt Nam' },
-        { d: 24, m: 12, i: 'Ng� y Lễ Giáng Sinh' }
+        { d:  9, m:  1, i: 'Ngày Học sinh - Sinh viên Việt Nam' },
+        { d:  3, m:  2, i: 'Ngày thành lập Đảng Cộng sản Việt Nam' },
+        { d: 27, m:  2, i: 'Ngày Thầy thuốc Việt Nam' },
+        { d:  8, m:  3, i: 'Ngày Quốc tế Phụ nữ' },
+        { d:  8, m:  3, i: 'Ngày thành lập Đoàn Thanh niên Cộng sản Hồ Chí Minh' },
+        { d: 26, m:  3, i: 'Ngày thành lập Đoàn Thanh niên Cộng sản Hồ Chí Minh' },
+        { d: 21, m:  4, i: 'Ngày Sách Việt Nam' },
+        { d: 30, m:  4, i: 'Ngày Thống nhất đất nước' },
+        { d:  1, m:  5, i: 'Ngày Quốc tế Lao động' },
+        { d: 15, m:  5, i: 'Ngày thành lập Đội Thiếu niên Tiền phong Hồ Chí Minh' },
+        { d: 19, m:  5, i: 'Ngày sinh của Chủ tịch Hồ Chí Minh' },
+        { d:  1, m:  6, i: 'Ngày Quốc tế Thiếu nhi' },
+        { d:  5, m:  6, i: 'Ngày Bác Hồ ra đi tìm đường cứu nước' },
+        { d: 27, m:  7, i: 'Ngày Thương binh Liệt sĩ' },
+        { d: 19, m:  8, i: 'Ngày Cách mạng tháng Tám thành công' },
+        { d:  2, m:  9, i: 'Ngày Quốc khánh' },
+        { d: 13, m: 10, i: 'Ngày Doanh nhân Việt Nam' },
+        { d: 20, m: 10, i: 'Ngày thành lập Hội Phụ nữ Việt Nam' },
+        { d: 20, m: 11, i: 'Ngày Nhà giáo Việt Nam' },
+        { d: 22, m: 12, i: 'Ngày thành lập Quân đội Nhân dân Việt Nam' },
+        { d: 24, m: 12, i: 'Ngày Lễ Giáng Sinh' }
       ],
       lunar: [
         { d:  1, m:  1, i: 'Tết Nguyên Đán' },
         { d: 15, m:  1, i: 'Tết Nguyên tiêu' },
-        { d:  3, m:  3, i: 'Tết H� n thực' },
+        { d:  3, m:  3, i: 'Tết Hàn thực' },
         { d: 10, m:  3, i: 'Giỗ Tổ Hùng Vương' },
         { d: 15, m:  4, i: 'Lễ Phật Đản' },
         { d:  5, m:  5, i: 'Tết Đoan ngọ' },
@@ -304,7 +304,7 @@
       return "";
     }
     var cc = getCanChi(lunarDate);
-    var s = "Ng� y " + cc[0] +", tháng "+cc[1] + ", năm " + cc[2];
+    var s = "Ngày " + cc[0] +", tháng "+cc[1] + ", năm " + cc[2];
     return s;
   }
 
@@ -328,7 +328,7 @@
     var dayOfWeek = TUAN[(lunar.jd + 1) % 7];
     s = dayOfWeek + " " + solarDay + "/" + solarMonth + "/" + solarYear;
     s += " (";
-    s = s + "Ng� y " + lunar.day+" tháng "+lunar.month;
+    s = s + "Ngày " + lunar.day+" tháng "+lunar.month;
     if (lunar.leap == 1) {
       s = s + " nhuận";
     }
@@ -602,7 +602,7 @@
         res += '            <span>'+cc[2]+'</span>\n';
         res += '          </td>\n';
         res += '          <td width="50%" class="calendar-b-right" valign="top">\n';
-        res += '            <span>Ng� y <strong>'+cc[0]+'</strong></span><br>\n';
+        res += '            <span>Ngày <strong>'+cc[0]+'</strong></span><br>\n';
         res += '            <span>Tháng <strong>'+cc[1]+'</strong></span><br>\n';
         res += '            <span>Năm <strong>'+cc[2]+'</strong></span><br>\n';
         res += '            <span>Giờ đầu <strong>'+(getCanHour0(currentLunarDate.jd)+' '+CHI[0])+'</strong></span><br>\n';
@@ -611,7 +611,7 @@
         res += '        </tr>\n';
         res +=          (holiday != '' ? '<tr><td colspan="2" class="calendar-holiday">'+holiday+'</td></tr>\n' : '' );
         res += '        <tr>\n';
-        res += '          <td colspan="2" class="calendar-hoangdao">Giờ ho� ng đạo: '+getGioHoangDao(currentLunarDate.jd)+'</td>\n';
+        res += '          <td colspan="2" class="calendar-hoangdao">Giờ hoàng đạo: '+getGioHoangDao(currentLunarDate.jd)+'</td>\n';
         res += '        </tr>\n';
         res += '      </tbody>\n';
         res += '    </table>\n';
@@ -739,10 +739,10 @@
           cc = getCanChi(lunar),
           holiday = getHolodayString( sday, smonth, dd, mm ),
           s  = '◊ ' + getDayString(lunar, sday, smonth, syear) + ' âm lịch)\n';
-          s += '◊ Ng� y '+cc[0]+', tháng '+cc[1]+', năm '+cc[2]+'\n';
-          s += '◊ Giờ đầu ng� y '+(getCanHour0(jd)+' '+CHI[0])+'\n';
+          s += '◊ Ngày '+cc[0]+', tháng '+cc[1]+', năm '+cc[2]+'\n';
+          s += '◊ Giờ đầu ngày '+(getCanHour0(jd)+' '+CHI[0])+'\n';
           s += '◊ Tiết '+TIETKHI[getSunLongitude(jd + 1, 7.0)]+'\n';
-          s += '◊ Giờ ho� ng đạo: ' + getGioHoangDao(jd) + '\n';
+          s += '◊ Giờ hoàng đạo: ' + getGioHoangDao(jd) + '\n';
           s += ( holiday != '' ? '◊ '+holiday : '' );
       alert(s);
     });
