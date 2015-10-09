@@ -25,4 +25,4 @@ $(element).amLich({
 ## Liên hệ
  * Tuan Ngo Minh
  * eMail: ichuot@gmail.com
- * Facebook: [fb.com/ichuot](fb.com/ichuot)
+ * Facebook: [fb.com/ichuot](https://fb.com/ichuot)
