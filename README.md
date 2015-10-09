@@ -4,12 +4,13 @@ jQuery.AmLich (Âm lịch Việt Nam)
 
 ```javascript
 $(element).amLich({
-  type: 'calendar', // month or year
-  tableWidth: '200px'
+  type: 'calendar', // month hoặc year hoặc text
+  tableWidth: '200px' // Chiều rộng lịch
 });
 ```
 ## Version
- * 0.1 (mới nhất) - 08/10/2015 (dd/mm/yyyy)
+ * 0.2 (mới nhất) - 09/10/2015 (dd/mm/yyyy)
+ * 0.1 - 08/10/2015 (dd/mm/yyyy)
  
 ## Đặc điểm
  * Âm và dương lịch
