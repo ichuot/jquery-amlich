@@ -1,5 +1,8 @@
 /**
- * Copyright 2004 Ho Ngoc Duc [http://come.to/duc]. All Rights Reserved.<p>
+ * jQuery.AmLich v0.2
+ * (https://github.com/ichuot/jquery-amlich)
+ *
+ * Copyright 2004 Ho Ngoc Duc [http://come.to/duc]. All Rights Reserved.
  * Permission to use, copy, modify, and redistribute this software and its
  * documentation for personal, non-commercial use is hereby granted provided that
  * this copyright notice appears in all copies.
@@ -545,13 +548,13 @@
   function getPrevMonthLink(mm, yy) {
     var mm1 = mm > 1 ? mm-1 : 12;
     var yy1 = mm > 1 ? yy : yy-1;
-    return '<a class="prev-month" data-yy="'+yy1+'" data-mm="'+mm1+'" href="#">&lsaquo;</a>';
+    return '<a class="prev-month" data-yy="'+yy1+'" data-mm="'+mm1+'" href="#">&nbsp;&lsaquo;&nbsp;</a>';
   }
 
   function getNextMonthLink(mm, yy) {
     var mm1 = mm < 12 ? mm+1 : 1;
     var yy1 = mm < 12 ? yy : yy+1;
-    return '<a class="next-month" data-yy="'+yy1+'" data-mm="'+mm1+'" href="#">&rsaquo;</a>';
+    return '<a class="next-month" data-yy="'+yy1+'" data-mm="'+mm1+'" href="#">&nbsp;&rsaquo;&nbsp;</a>';
   }
 
   function getPrevYearLink(mm, yy) {
@@ -592,14 +595,14 @@
         res += '        <tr>\n';
         res += '          <td colspan="2" class="calendar-day">\n';
         res += '            <span class="day-num">'+today.getDate()+'</span><br>\n';
-        res += '            <span>'+TUAN[(currentLunarDate.jd + 1) % 7]+'</span>\n';
+        res += '            <span class="day-tuan">'+TUAN[(currentLunarDate.jd + 1) % 7]+'</span>\n';
         res += '          </td>\n';
         res += '        </tr>\n';
         res += '        <tr>\n';
         res += '          <td width="50%" class="calendar-b-left" valign="top">\n';
-        res += '            <span>Tháng '+THANG[currentLunarDate.month-1]+'</span><br>\n';
+        res += '            <span class="lunar-month-name">Tháng '+THANG[currentLunarDate.month-1]+'</span><br>\n';
         res += '            <span class="lunar-day-num">'+currentLunarDate.day+'</span><br>\n';
-        res += '            <span>'+cc[2]+'</span>\n';
+        res += '            <span class="lunar-year-name">'+cc[2]+'</span>\n';
         res += '          </td>\n';
         res += '          <td width="50%" class="calendar-b-right" valign="top">\n';
         res += '            <span>Ngày <strong>'+cc[0]+'</strong></span><br>\n';
@@ -609,7 +612,7 @@
         res += '            <span>Tiết <strong>'+TIETKHI[getSunLongitude(currentLunarDate.jd + 1, 7.0)]+'</strong></span>\n';
         res += '          </td>\n';
         res += '        </tr>\n';
-        res +=          (holiday != '' ? '<tr><td colspan="2" class="calendar-holiday">'+holiday+'</td></tr>\n' : '' );
+        res += '        <tr class="calendar-holiday">'+(holiday!='' ? '<td colspan="2">'+holiday+'</td>' : '')+'</tr>\n';
         res += '        <tr>\n';
         res += '          <td colspan="2" class="calendar-hoangdao">Giờ hoàng đạo: '+getGioHoangDao(currentLunarDate.jd)+'</td>\n';
         res += '        </tr>\n';
@@ -737,14 +740,42 @@
           jd = parseInt(args[4]), sday = parseInt(args[5]), smonth = parseInt(args[6]), syear = parseInt(args[7]),
           lunar = new LunarDate(dd, mm, yy, leap, jd),
           cc = getCanChi(lunar),
-          holiday = getHolodayString( sday, smonth, dd, mm ),
-          s  = '◊ ' + getDayString(lunar, sday, smonth, syear) + ' âm lịch)\n';
+          holiday = getHolodayString( sday, smonth, dd, mm );
+          s = '';
+      switch ( settings.type ) {
+        case 'month':
+          s += '◊ ' + getDayString(lunar, sday, smonth, syear) + ' âm lịch)\n';
           s += '◊ Ngày '+cc[0]+', tháng '+cc[1]+', năm '+cc[2]+'\n';
           s += '◊ Giờ đầu ngày '+(getCanHour0(jd)+' '+CHI[0])+'\n';
           s += '◊ Tiết '+TIETKHI[getSunLongitude(jd + 1, 7.0)]+'\n';
           s += '◊ Giờ hoàng đạo: ' + getGioHoangDao(jd) + '\n';
           s += ( holiday != '' ? '◊ '+holiday : '' );
-      alert(s);
+          alert(s);
+          break;
+        case 'calendar':
+          $this.find('.calendar .calendar-month').html('Tháng '+smonth+' Năm '+syear);
+          $this.find('.calendar .calendar-day .day-num').html(sday);
+          $this.find('.calendar .calendar-day .day-tuan').html(TUAN[(jd + 1) % 7]);
+          $this.find('.calendar .lunar-day-num').html(dd);
+          $this.find('.calendar .lunar-month-name').html('Tháng '+THANG[mm-1]);
+          $this.find('.calendar .lunar-year-name').html(cc[2]);
+          $this.find('.calendar .calendar-holiday').html((holiday!='' ? '<td colspan="2">'+holiday+'</td>' : ''));
+          $this.find('.calendar .calendar-hoangdao').html('Giờ hoàng đạo: '+getGioHoangDao(jd));
+          s += '<span>Ngày <strong>'+cc[0]+'</strong></span><br>\n';
+          s += '<span>Tháng <strong>'+cc[1]+'</strong></span><br>\n';
+          s += '<span>Năm <strong>'+cc[2]+'</strong></span><br>\n';
+          s += '<span>Giờ đầu <strong>'+(getCanHour0(jd)+' '+CHI[0])+'</strong></span><br>\n';
+          s += '<span>Tiết <strong>'+TIETKHI[getSunLongitude(jd + 1, 7.0)]+'</strong></span>';
+          $this.find('.calendar .calendar-b-right').html(s);
+          break;
+      }
+    });
+
+    $this.on('click', 'a.prev-year, a.prev-month, a.next-month, a.next-year', function(e) {
+      e.preventDefault();
+      var yy = $(this).data('yy'),
+          mm = $(this).data('mm');
+      return $this.html( printMonth(mm, yy) );
     });
 
     $this.on('click', 'td.ngaytuan', function(e) {
@@ -754,27 +785,12 @@
 
     switch ( settings.type ) {
       case 'month':
-        $this.on('click', 'a.prev-year, a.prev-month, a.next-month, a.next-year', function(e) {
-          e.preventDefault();
-          var yy = $(this).data('yy'),
-              mm = $(this).data('mm');
-          return $this.html( printMonth(mm, yy) );
-        });
         return $this.html( printSelectedMonth() );
         break;
       case 'year':
-        $this.on('click', 'a.prev-year, a.prev-month, a.next-month, a.next-year', function(e) {
-          e.preventDefault();
-        });
         return $this.html( printSelectedYear() );
         break;
       case 'calendar':
-        $this.on('click', 'a.prev-year, a.prev-month, a.next-month, a.next-year', function(e) {
-          e.preventDefault();
-          var yy = $(this).data('yy'),
-              mm = $(this).data('mm');
-          return $this.html( printMonth(mm, yy) );
-        });
         return $this.html( printSelectedMonth() );
         break;
       case 'text':
