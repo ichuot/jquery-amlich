@@ -376,7 +376,7 @@
     dayName = CAN[(lunar.jd + 9) % 10] + " " + CHI[(lunar.jd+1)%12];
     monthName = CAN[(lunar.year*12+lunar.month+3) % 10] + " " + CHI[(lunar.month+1)%12];
     if (lunar.leap == 1) {
-      monthName += " (nhuận)";
+      monthName += " (N)";
     }
     yearName = getYearCanChi(lunar.year);
     return new Array(dayName, monthName, yearName);
