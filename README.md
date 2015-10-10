@@ -20,8 +20,8 @@ $(element).amLich({
  * Giờ hòang đạo
  * CÁC NGÀY LỄ ÂM VÀ DƯƠNG LỊCH CỦA VIỆT NAM
 
-## Ảnh chụp màn hình
- ![Calendar](http://ichuot.github.io/data/2015-10-10_133943.png)
+## Ảnh chụp
+ ![Calendar](http://ichuot.github.io/data/2015-10-10.png)
 
 ## Liên hệ
  * Tuan Ngo Minh
