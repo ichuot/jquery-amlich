@@ -511,7 +511,7 @@
     var MonthHead = mm + "/" + yy;
     var LunarHead = getYearCanChi(ld1.year);
     var res = "";
-    res += '<table class="amlich" border="0" cellpadding="4" cellspacing="0" width="'+settings.tableWidth+'">\n';
+    res += '<table class="amlich" border="0" cellpadding="0" cellspacing="0" width="'+settings.tableWidth+'">\n';
     res += '<tbody>\n';
     res += printHead(mm, yy);
     for (i = 0; i < 6; i++) {
