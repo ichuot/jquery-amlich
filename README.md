@@ -23,6 +23,12 @@ $(element).amLich({
 ## Ảnh chụp
  ![Calendar](http://ichuot.github.io/data/2015-10-10.png)
 
+## Demo
+ * [Calendar](http://ichuot.github.io/data/jquery-amlich-examples/calendar.html)
+ * [Month](http://ichuot.github.io/data/jquery-amlich-examples/month.html)
+ * [Year](http://ichuot.github.io/data/jquery-amlich-examples/year.html)
+ * [Text](http://ichuot.github.io/data/jquery-amlich-examples/text.html)
+
 ## Liên hệ
  * Tuan Ngo Minh
  * eMail: ichuot@gmail.com
