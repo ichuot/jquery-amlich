@@ -21,7 +21,7 @@ $(element).amLich({
  * CÁC NGÀY LỄ ÂM VÀ DƯƠNG LỊCH CỦA VIỆT NAM
 
 ## Ảnh chụp
- ![Calendar](http://i.imgur.com/46YGejT.jpg)
+ ![Calendar](http://ichuot.github.io/data/2015-10-10_133943.png)
 
 ## Liên hệ
  * Tuan Ngo Minh
