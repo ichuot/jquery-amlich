@@ -1,5 +1,5 @@
 /**
- * jQuery.AmLich v0.3
+ * jQuery.AmLich v0.3.1
  * (https://github.com/ichuot/jquery-amlich)
  *
  * Copyright 2004 Ho Ngoc Duc [http://come.to/duc]. All Rights Reserved.
@@ -400,6 +400,13 @@
     return s;
   }
 
+  function getPhatLich(ld, lm, ly) {
+    ld = (ld == null ? currentLunarDate.day : ld);
+    lm = (lm == null ? currentLunarDate.month : lm);
+    ly = (ly == null ? currentLunarDate.year : ly);
+    return ( lm > 4 || (lm >= 4 && ld >= 15) ? ly + 544 : (ly + 544) - 1);
+  }
+
   function getDateString(dd, MM, yyyy) {
     var InputLunarDate = getLunarDate(dd, MM, yyyy);
     var s;
@@ -412,68 +419,6 @@
     }
     s += "/" + getYearCanChi(InputLunarDate.year) + ")";
     return s;
-  }
-
-  function getLunarDateString(dd, MM, yyyy, hh, mm, ss) {
-    var InputLunarDate = getLunarDate(dd, MM, yyyy);
-    var thang;
-    if (InputLunarDate.month==1)
-      thang = "Giêng";
-    else if (InputLunarDate.month==12)
-      thang = "Chạp";
-    else
-      thang = InputLunarDate.month;
-
-    var mydate = new Date(yyyy+'/'+MM+'/'+dd+ ' '+hh+':'+mm+':'+ss);
-    var date2552 = new Date("2008/05/19");
-    var date2553 = new Date("2009/05/09");
-    var date2554 = new Date("2010/05/28");
-    var date2555 = new Date("2011/05/17");
-    var date2556 = new Date("2012/05/05");
-    var date2557 = new Date("2013/05/24");
-    var date2558 = new Date("2014/05/13");
-
-    var curHour = mydate.getHours();
-    var curMin = mydate.getMinutes();
-    var curSec = mydate.getSeconds();
-    var curTime =
-       ((curHour < 10) ? "0" : "") + curHour + ":"
-       + ((curMin < 10) ? "0" : "") + curMin + ":"
-       + ((curSec < 10) ? "0" : "") + curSec;
-
-    var s;
-    var dayOfWeek = TUAN[(InputLunarDate.jd + 1) % 7];
-    s = dayOfWeek + ", " + dd + "/" + MM + "/" + yyyy+",&nbsp;"+curTime+" (GMT+7)";
-
-    s += " &bull; " + InputLunarDate.day+" Tháng "+ thang;
-    if (InputLunarDate.leap == 1) {
-      s = s + " (Nhuận)";
-    }
-    s += " Năm " + getYearCanChi(InputLunarDate.year) + " (ÂL)";
-
-      var pl
-      if (mydate < date2552)
-          pl = "PL.2551";
-      else if (mydate < date2553)
-          pl = "PL.2552";
-      else if (mydate < date2554)
-          pl = "PL.2553";
-      else if (mydate < date2555)
-          pl = "PL.2554";
-      else if (mydate < date2556)
-          pl = "PL.2555";
-      else if (mydate < date2557)
-          pl = "PL.2556";
-      else if (mydate < date2558)
-          pl = "PL.2557";
-      else pl = "";
-
-      if (pl!="")
-        s += " ● " + pl;
-
-    document.open();
-    document.write(s);
-    document.close();
   }
 
   function getCurrentTime() {
@@ -648,14 +593,14 @@
         res += '          <td width="50%" class="calendar-b-left" valign="top">\n';
         res += '            <span class="lunar-month-name">Tháng '+THANG[currentLunarDate.month-1]+'</span><br>\n';
         res += '            <span class="lunar-day-num">'+currentLunarDate.day+'</span><br>\n';
-        res += '            <span class="lunar-year-name">'+cc[2]+'</span>\n';
+        res += '            <span class="lunar-year-name"><strong>'+cc[2]+'</strong></span>\n';
         res += '          </td>\n';
         res += '          <td width="50%" class="calendar-b-right" valign="top">\n';
         res += '            <span>Ngày <strong>'+cc[0]+'</strong></span><br>\n';
         res += '            <span>Tháng <strong>'+cc[1]+'</strong></span><br>\n';
-        res += '            <span>Năm <strong>'+cc[2]+'</strong></span><br>\n';
         res += '            <span>Giờ đầu <strong>'+(getCanHour0(currentLunarDate.jd)+' '+CHI[0])+'</strong></span><br>\n';
-        res += '            <span>Tiết <strong>'+TIETKHI[getSunLongitude(currentLunarDate.jd + 1, 7.0)]+'</strong></span>\n';
+        res += '            <span>Tiết <strong>'+TIETKHI[getSunLongitude(currentLunarDate.jd + 1, 7.0)]+'</strong></span><br>\n';
+        res += '            <span>PL: <strong>'+getPhatLich()+'</strong></span>\n';
         res += '          </td>\n';
         res += '        </tr>\n';
         res += '        <tr class="calendar-holiday">'+(holiday!='' ? '<td colspan="2">'+holiday+'</td>' : '')+'</tr>\n';
@@ -753,7 +698,7 @@
     }
     var lunar = lunarDate.day;
     if (solarDate == 1 || lunar == 1) {
-      lunar = lunarDate.day + '/' + lunarDate.month + (lunarDate.leap == 1 ? '(N)' : '');
+      lunar = lunarDate.day + '/' + lunarDate.month + (lunarDate.leap == 1 ? '<sup>N</sup>' : '');
     }
     var res = "";
     var args = lunarDate.day + "," + lunarDate.month + "," + lunarDate.year + "," + lunarDate.leap;
@@ -789,12 +734,14 @@
           holiday = getHolodayString( sday, smonth, dd, mm );
           s = '';
       switch ( settings.type ) {
+        case 'year':
         case 'month':
           s += '◊ ' + getDayString(lunar, sday, smonth, syear) + ' âm lịch)\n';
           s += '◊ Ngày '+cc[0]+', tháng '+cc[1]+', năm '+cc[2]+'\n';
           s += '◊ Giờ đầu ngày '+(getCanHour0(jd)+' '+CHI[0])+'\n';
           s += '◊ Tiết '+TIETKHI[getSunLongitude(jd + 1, 7.0)]+'\n';
           s += '◊ Giờ hoàng đạo: ' + getGioHoangDao(jd) + '\n';
+          s += '◊ PL: ' + getPhatLich(dd, mm, yy) + '\n';
           s += ( holiday != '' ? '◊ '+holiday : '' );
           alert(s);
           break;
@@ -804,14 +751,14 @@
           $this.find('.calendar .calendar-day .day-tuan').html(TUAN[(jd + 1) % 7]);
           $this.find('.calendar .lunar-day-num').html(dd);
           $this.find('.calendar .lunar-month-name').html('Tháng '+THANG[mm-1]+(leap == 1 ? ' (N)' : ''));
-          $this.find('.calendar .lunar-year-name').html(cc[2]);
+          $this.find('.calendar .lunar-year-name').html('<strong>'+cc[2]+'</strong>');
           $this.find('.calendar .calendar-holiday').html((holiday!='' ? '<td colspan="2">'+holiday+'</td>' : ''));
           $this.find('.calendar .calendar-hoangdao').html('Giờ hoàng đạo: '+getGioHoangDao(jd));
           s += '<span>Ngày <strong>'+cc[0]+'</strong></span><br>\n';
           s += '<span>Tháng <strong>'+cc[1]+'</strong></span><br>\n';
-          s += '<span>Năm <strong>'+cc[2]+'</strong></span><br>\n';
           s += '<span>Giờ đầu <strong>'+(getCanHour0(jd)+' '+CHI[0])+'</strong></span><br>\n';
-          s += '<span>Tiết <strong>'+TIETKHI[getSunLongitude(jd + 1, 7.0)]+'</strong></span>';
+          s += '<span>Tiết <strong>'+TIETKHI[getSunLongitude(jd + 1, 7.0)]+'</strong></span><br>';
+          s += '<span>PL: <strong>'+getPhatLich(dd, mm, yy)+'</strong></span>\n';
           $this.find('.calendar .calendar-b-right').html(s);
           break;
       }
