@@ -9,7 +9,8 @@ $(element).amLich({
 });
 ```
 ## Version
- * 0.2 (mới nhất) - 09/10/2015 (dd/mm/yyyy)
+ * 0.3 (mới nhất) - 10/10/2015 (dd/mm/yyyy)
+ * 0.2 - 09/10/2015 (dd/mm/yyyy)
  * 0.1 - 08/10/2015 (dd/mm/yyyy)
  
 ## Đặc điểm

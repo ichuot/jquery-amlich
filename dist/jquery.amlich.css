@@ -80,7 +80,7 @@
 .amlich .leduong { background-color: #dff0d8; }
 .amlich .leduong:hover { background-color: #d0e9c6 }
 .amlich .am { text-align: right; font-size: 75%; color: #554C00; }
-.amlich .am2 { text-align: right; font-size: 75%; color: #004080; }
+.amlich .am2 { text-align: right; font-size: 75%; color: #337ab7; font-weight: bold; }
 .amlich .t2t6 { text-align: left; color: #5a5c5b; font-weight: bold; }
 .amlich .t7 { font-weight: bold; text-align: left; color: blue; }
 .amlich .cn { font-weight: bold; text-align: left; color: red; }
