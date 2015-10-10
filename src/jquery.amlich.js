@@ -297,13 +297,6 @@
     return decodeLunarYear(yyyy, yearCode);
   }
 
-  console.log(getYearInfo(2015));
-  console.log(jdn2date(2457073));
-  //var nhuan = (leap == 1) ? ' nhuận' : '';
-  //tenthang = 'Tháng '+THANG[mm-1]+nhuan+(length == 30 ? ' (Đ)' : ' (T)');
-  //console.log(getDateString(23,1,1300));
-  //console.log(TK21[2015 - 2000]);
-
   function findLunarDate(jd, ly) {
     if (jd > LAST_DAY || jd < FIRST_DAY || ly[0].jd > jd) {
       return new LunarDate(0, 0, 0, 0, jd);
@@ -588,7 +581,6 @@
         } else {
           solar = k - emptyCells + 1;
           ld1 = currentMonth[k - emptyCells];
-          console.log(ld1);
           res += printCell(ld1, solar, mm, yy);
         }
       }
