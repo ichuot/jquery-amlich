@@ -30,6 +30,6 @@ $(element).amLich({
  * [Text](http://ichuot.github.io/data/jquery-amlich-examples/text.html)
 
 ## Liên hệ
- * Tuan Ngo Minh
+ * Ngô Minh Tuấn
  * eMail: ichuot@gmail.com
  * Facebook: [fb.com/ichuot](https://fb.com/ichuot)
