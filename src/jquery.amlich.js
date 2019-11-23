@@ -149,7 +149,6 @@
           { d:  3, m:  2, i: 'Ngày thành lập Đảng Cộng sản Việt Nam' },
           { d: 27, m:  2, i: 'Ngày Thầy thuốc Việt Nam' },
           { d:  8, m:  3, i: 'Ngày Quốc tế Phụ nữ' },
-          { d:  8, m:  3, i: 'Ngày thành lập Đoàn Thanh niên Cộng sản Hồ Chí Minh' },
           { d: 26, m:  3, i: 'Ngày thành lập Đoàn Thanh niên Cộng sản Hồ Chí Minh' },
           { d: 21, m:  4, i: 'Ngày Sách Việt Nam' },
           { d: 30, m:  4, i: 'Ngày Thống nhất đất nước' },
